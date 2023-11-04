@@ -17,8 +17,8 @@ export default function Reset() {
 
   const formik = useFormik({
     initialValues : {
-      password : 'admin@123',
-      confirm_pwd: 'admin@123'
+      password : '',
+      confirm_pwd: ''
     },
     validate : resetPasswordValidation,
     validateOnBlur: false,
