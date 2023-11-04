@@ -6,9 +6,9 @@ import { useFormik } from 'formik';
 import { registerValidation } from '../../helper/validate';
 import convertToBase64 from '../../helper/convert';
 import { registerUser } from '../../helper/helper'
-
-
 import styles from '../../style/Username.module.css';
+
+
 
 export default function Register() {
 
