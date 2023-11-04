@@ -4,7 +4,7 @@ import avatar from '../../assets/profile.png';
 import { Toaster } from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { usernameValidate } from '../../helper/validate';
-
+import { useAuthStore } from '../../store/store';
 
 
 // style
@@ -14,7 +14,9 @@ import styles from '../../style/Username.module.css';
 export default function Username() {
 
   const navigate = useNavigate();
-  // const setUsername = useAuthStore(state => state.setUsername);
+  const setUsername = useAuthStore(state => state.setUsername);
+  // const username = useAuthStore(state => state.auth.username);
+
 
   const formik = useFormik({
     initialValues : {
@@ -24,10 +26,15 @@ export default function Username() {
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit : async values => {
-      // setUsername(values.username);
+      debugger
+      setUsername(values.username);
       navigate('/password')
     }
   })
+
+  // useEffect(()=>{
+  //   console.log("username => ", username);
+  // },[username])
 
   return (
     <div className="container mx-auto">
